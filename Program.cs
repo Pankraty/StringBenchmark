@@ -38,8 +38,15 @@ namespace StringBenchmark
                 Row = rnd.Next(1_000_000);
             }
         }
-        
-        [Benchmark(Description = "String.Format(...)", Baseline = true)]
+
+        [Benchmark(Description = "Create cell", Baseline = true)]
+        public string CreateCells()
+        {
+            var cell = new Cell();
+            return "";
+        }
+
+        [Benchmark(Description = "String.Format(...)")]
         public string TestFormat()
         {
             var cell = new Cell();
@@ -108,7 +115,16 @@ namespace StringBenchmark
             }
         }
 
-        [Benchmark(Description = "String.Format(...)", Baseline = true)]
+
+        [Benchmark(Description = "Create cells", Baseline = true)]
+        public string CreateCells()
+        {
+            var cell1 = new Cell();
+            var cell2 = new Cell();
+            return "";
+        }
+
+        [Benchmark(Description = "String.Format(...)")]
         public string TestFormat()
         {
             var cell1 = new Cell();
